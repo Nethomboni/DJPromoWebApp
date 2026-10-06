@@ -1,0 +1,7 @@
+@model Venue
+@{ ViewData["Title"] = "Edit Venue"; }
+<h1>Edit Venue</h1>
+<form asp-action="Edit" class="col-md-6">
+    <input type="hidden" asp-for="VenueID" />
+    <partial name="_Form" model="Model" />
+</form>

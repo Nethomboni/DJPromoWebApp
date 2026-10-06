@@ -1,0 +1,24 @@
+@model Gig
+<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+<div class="mb-3">
+    <label asp-for="DJID" class="form-label"></label>
+    <select asp-for="DJID" class="form-select" asp-items="ViewBag.DJID"></select>
+    <span asp-validation-for="DJID" class="text-danger"></span>
+</div>
+<div class="mb-3">
+    <label asp-for="VenueID" class="form-label"></label>
+    <select asp-for="VenueID" class="form-select" asp-items="ViewBag.VenueID"></select>
+    <span asp-validation-for="VenueID" class="text-danger"></span>
+</div>
+<div class="mb-3">
+    <label asp-for="Date" class="form-label"></label>
+    <input asp-for="Date" type="date" class="form-control" />
+    <span asp-validation-for="Date" class="text-danger"></span>
+</div>
+<div class="mb-3">
+    <label asp-for="Time" class="form-label"></label>
+    <input asp-for="Time" type="time" class="form-control" />
+    <span asp-validation-for="Time" class="text-danger"></span>
+</div>
+<button type="submit" class="btn btn-primary">Save</button>
+<a class="btn btn-link" asp-action="Index">Cancel</a>

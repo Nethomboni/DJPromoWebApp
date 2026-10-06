@@ -1,0 +1,19 @@
+@model IEnumerable<DJ>
+@{ ViewData["Title"] = "DJs"; }
+<h1>DJs</h1>
+<p><a class="btn btn-primary" asp-action="Create">Add DJ</a></p>
+<table class="table table-striped bg-white">
+    <thead><tr><th>@Html.DisplayNameFor(m => m.StageName)</th><th></th></tr></thead>
+    <tbody>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.StageName</td>
+            <td class="text-end">
+                <a class="btn btn-sm btn-outline-primary" asp-action="Edit" asp-route-id="@item.DJID">Edit</a>
+                <a class="btn btn-sm btn-outline-danger" asp-action="Delete" asp-route-id="@item.DJID">Delete</a>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>

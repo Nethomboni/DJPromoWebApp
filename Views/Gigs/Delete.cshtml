@@ -1,0 +1,15 @@
+@model Gig
+@{ ViewData["Title"] = "Delete Gig"; }
+<h1>Delete Gig</h1>
+<h4>Are you sure you want to delete this gig?</h4>
+<dl class="row">
+    <dt class="col-sm-2">DJ</dt><dd class="col-sm-10">@Model.DJ.StageName</dd>
+    <dt class="col-sm-2">Venue</dt><dd class="col-sm-10">@Model.Venue.Name</dd>
+    <dt class="col-sm-2">Date</dt><dd class="col-sm-10">@Model.Date.ToString("dd MMM yyyy")</dd>
+    <dt class="col-sm-2">Time</dt><dd class="col-sm-10">@Model.Time.ToString(@"hh\:mm")</dd>
+</dl>
+<form asp-action="Delete">
+    <input type="hidden" asp-for="GigID" />
+    <button type="submit" class="btn btn-danger">Delete</button>
+    <a class="btn btn-link" asp-action="Index">Back to list</a>
+</form>

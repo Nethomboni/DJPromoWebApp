@@ -1,0 +1,10 @@
+@model DJ
+@{ ViewData["Title"] = "Delete DJ"; }
+<h1>Delete DJ</h1>
+<h4>Are you sure you want to delete <strong>@Model.StageName</strong>?</h4>
+<p class="text-danger">Any gigs booked for this DJ will also be deleted.</p>
+<form asp-action="Delete">
+    <input type="hidden" asp-for="DJID" />
+    <button type="submit" class="btn btn-danger">Delete</button>
+    <a class="btn btn-link" asp-action="Index">Back to list</a>
+</form>
